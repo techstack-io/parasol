@@ -4,7 +4,23 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'] 
+      },
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'desert-storm': '#f8f8f7',
+      'purple': '#44195E',
+      'midnight': '#121063',
+      'blaze': '#FC6601',
+      'sandy': '#EF955D',
+      'silver': '#ecebff',
+      'bubble-gum': '#ff77e9',
+      'bermuda': '#78dcca',
+    },
   },
   plugins: [],
 }
