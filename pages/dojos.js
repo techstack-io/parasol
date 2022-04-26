@@ -19,7 +19,7 @@ import PageHeading from "../components/PageHeading"
 const products = [
     {
       id: 1,
-      name: 'Earthen Bottle',
+      name: 'Meditation Station',
       href: '#',
       price: '$48',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg',
