@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'] 
+        'baloo-2': ["'Baloo 2'", 'cursive'] 
       },
     },
     colors: {

@@ -1,0 +1,13 @@
+{
+    "jshint.enable": false,
+    "standard.enable": false,
+    "workbench.colorCustomizations": {
+        "statusBar.foreground": "#FDEDFF",
+        "statusBar.background": "#91329D",
+        "statusBarItem.hoverBackground": "#70295B",
+        "statusBarItem.remoteForeground": "#FFDAE7",
+        "statusBarItem.remoteBackground": "#A7335E",
+        "statusBar.debuggingForeground": "#2B0030",
+        "statusBar.debuggingBackground": "#C868D4"
+    }
+}

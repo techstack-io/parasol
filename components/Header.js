@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 const navigation = [
-    { name: 'Solutions', href: '#' },
+    { name: 'Dojos', href: '#' },
     { name: 'Pricing', href: '#' },
     { name: 'Docs', href: '#' },
     { name: 'Company', href: '#' },
