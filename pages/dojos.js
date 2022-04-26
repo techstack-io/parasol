@@ -21,7 +21,7 @@ const products = [
       id: 1,
       name: 'Meditation Station',
       href: '#',
-      price: '$48',
+      price: '408 Washington',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg',
       imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
     },
