@@ -1,13 +1,8 @@
 import Image from "next/image"
 
 const navigation = [
-<<<<<<< HEAD
-    { name: 'Dojos', href: '#' },
-    { name: 'Pricing', href: '#' },
-=======
     { name: 'Dojos', href: '/dojos' },
     { name: 'Articles', href: '/articles' },
->>>>>>> ff2f26ce2c3507a0e3e9d87df163730a95c27f15
     { name: 'Docs', href: '#' },
     { name: 'Company', href: '#' },
   ]

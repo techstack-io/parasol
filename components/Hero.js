@@ -1,10 +1,6 @@
 import Image from "next/image"
 
-<<<<<<< HEAD
-export default function Header() {
-=======
 export default function Hero() {
->>>>>>> ff2f26ce2c3507a0e3e9d87df163730a95c27f15
     return (
         <div className="relative bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -46,11 +42,7 @@ export default function Hero() {
         src="/static/hero-1-img.svg"
         alt="Main Image"
         width={600}
-<<<<<<< HEAD
-        height={600}
-=======
         height={500}
->>>>>>> ff2f26ce2c3507a0e3e9d87df163730a95c27f15
         />
         </div>
       </div>
