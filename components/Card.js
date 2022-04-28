@@ -15,7 +15,7 @@ const Card = (props) => {
           objectFit='contain'
         />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{props.name}</div>
+          <div className="font-bold text-md mb-2">{props.name}</div>
           <p className="text-gray-700 text-base">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
             quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
