@@ -3,8 +3,17 @@ import PageHeading from "../components/PageHeading";
 import Card from "../components/Card";
 import dojos from '../data/dojos.json'
 
+export async function getStaticProps(context) {
+  return {
+    props: {
+      dojos,
+    }, 
+  };
+}
 
-export default function Dojos() {
+
+export default function Dojos(props) {
+  console.log('props', props);
     return(
       <>
       <PageHeading />
@@ -14,6 +23,7 @@ export default function Dojos() {
           {dojos.map((dojo) => {
             return (
               <Card
+              key={dojo.id}
               name={dojo.name}
               imgUrl={dojo.imgUrl}
               href={`/dojo/${dojo.id}`}

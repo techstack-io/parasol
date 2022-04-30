@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import Link from "next/link"
-import { ChevronRightIcon, StarIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 
 const Dojo = () => {
