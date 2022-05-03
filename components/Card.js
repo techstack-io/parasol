@@ -10,7 +10,7 @@ const Card = (props) => {
           src={props.imgUrl}
           alt="Dojo"
           width={'100%'}
-          height={'50%'}
+          height={'100%'}
           layout="responsive" 
           objectFit='contain'
         />
