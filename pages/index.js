@@ -1,9 +1,22 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Hero from '../components/Hero'
+import Image from 'next/image'
+import dojos from '../data/dojos.json'
+import Banner from '../components/Banner'
 
+export async function getStaticProps(context) {
+  return {
+    props: {
+      dojos,
+    }, 
+  };
+}
 
-export default function Home() {
+export default function Home(props) {
+  const handleOnBannerBtnClick = () => {
+    console.log('Banner Button')
+  }
+  console.log('props', props);
   return (
     <div>
     {/* Head */}
@@ -12,7 +25,8 @@ export default function Home() {
       <meta name='description' content='A meditation app' />
       <link rel='icon' href='/favicon.ico' />
     </Head>
-    <Hero />
+    {/* Banner */}
+    <Banner buttonText='Find Dojo' handleOnClick={handleOnBannerBtnClick} />
     </div>
   )
 }
