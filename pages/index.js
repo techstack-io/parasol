@@ -18,7 +18,7 @@ export default function Home(props) {
   }
   console.log('props', props);
   return (
-    <div>
+    <>
     {/* Head */}
     <Head>
       <title>Parasol</title>
@@ -26,7 +26,8 @@ export default function Home(props) {
       <link rel='icon' href='/favicon.ico' />
     </Head>
     {/* Banner */}
-    <Banner buttonText='Find Dojo' handleOnClick={handleOnBannerBtnClick} />
-    </div>
+    <Banner buttonText='Find Meditation' handleOnClick={handleOnBannerBtnClick} />
+    
+    </>
   )
 }

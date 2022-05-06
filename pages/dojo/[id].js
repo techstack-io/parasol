@@ -1,8 +1,30 @@
 import { useRouter } from "next/router";
 import Link from "next/link"
 import Image from 'next/image'
+import dojosData from '../../data/dojos.json'
 
-const Dojo = () => {
+export function getStaticProps(staticProps) {
+  const params = staticProps.params;
+  return {
+    props: {
+      dojo: dojosData.find(dojo => {
+        return dojo.id.toString() === params.id;  // params.id
+      })
+    }
+  }
+}
+
+export function getStaticPaths() {
+  return {
+    paths: [
+      { params: { id: '0' } },
+      { params: { id: '1' } }
+    ],
+    fallback: false // false or 'blocking'
+  }
+}
+
+const Dojo = (props) => {
   const router = useRouter();
   return (
     <>
@@ -16,13 +38,11 @@ const Dojo = () => {
     <main className="lg:relative">
         <div className="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
           <div className="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
-            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-              <span className="block xl:inline">Data to enrich your</span>{' '}
-              <span className="block text-indigo-600 xl:inline">online business</span>
+            <h1 className="text-4xl capitalize tracking-tight font-Libre-Bodoni text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+              <span className="block xl:inline">{props.dojo.name}</span>{' '}
             </h1>
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat aliqua.
+            {props.dojo.address}
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
