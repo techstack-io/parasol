@@ -15,17 +15,28 @@ export function getStaticProps(staticProps) {
 }
 
 export function getStaticPaths() {
+  const paths = dojosData.map((dojo) => {
+    return {
+      params: {
+        id: dojo.id.toString(),
+      },
+    };
+  });
   return {
-    paths: [
-      { params: { id: '0' } },
-      { params: { id: '1' } }
-    ],
+    paths,
     fallback: false // false or 'blocking'
   }
 }
 
 const Dojo = (props) => {
   const router = useRouter();
+  
+  if (router.isFallback) {
+    return <div>Loading...</div>
+  } 
+  
+  const { address, name, neighborhood } = props.dojo;
+
   return (
     <>
      <Link href="/">
@@ -39,10 +50,13 @@ const Dojo = (props) => {
         <div className="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-48 lg:text-left">
           <div className="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
             <h1 className="text-4xl capitalize tracking-tight font-Libre-Bodoni text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-              <span className="block xl:inline">{props.dojo.name}</span>{' '}
+              <span className="block xl:inline">{name}</span>{' '}
             </h1>
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-            {props.dojo.address}
+            {address}
+            </p>
+            <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+            Neighborhood: {neighborhood}
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
