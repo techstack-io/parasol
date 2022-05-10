@@ -4,6 +4,13 @@ import Card from "../components/Card";
 import dojosData from '../data/dojos.json'
 
 export async function getStaticProps(context) {
+  
+  const sdk = require('api')('@fsq-docs/v1.0#14d4602hl16yojbt');
+
+  sdk['place-search']({Authorization: 'fsq3KYThaPlJVMyHp4+tqwcoxEptNk/qEhv7so/6RPB3q8o='})
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
+  
   return {
     props: {
       dojos: dojosData,
