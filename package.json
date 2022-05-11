@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "babel-plugin-superjson-next": "^0.4.3",
     "next": "12.1.5",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "superjson": "^1.9.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.5",

@@ -1,19 +1,27 @@
 /* eslint-disable react/jsx-key */
 import PageHeading from "../components/PageHeading";
 import Card from "../components/Card";
-import dojosData from '../data/dojos.json'
+import { fetchDojos } from "../lib/dojos";
+
+// export async function getStaticProps() {
+//   const profiles = await getAllBusinessProfiles();
+//   const allProfiles = JSON.stringify(profiles)
+
+//   return {
+//       props: {
+//            allProfiles
+//       }
+//  };
+// }
 
 export async function getStaticProps(context) {
   
-  const sdk = require('api')('@fsq-docs/v1.0#14d4602hl16yojbt');
+const dojos = await fetchDojos();
+// const allDojos = JSON.stringify(dojos)
 
-  sdk['place-search']({Authorization: 'fsq3KYThaPlJVMyHp4+tqwcoxEptNk/qEhv7so/6RPB3q8o='})
-    .then(res => console.log(res))
-    .catch(err => console.error(err));
-  
   return {
     props: {
-      dojos: dojosData,
+      dojos,
     }, 
   };
 }
