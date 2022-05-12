@@ -2,17 +2,7 @@
 import PageHeading from "../components/PageHeading";
 import Card from "../components/Card";
 import { fetchDojos } from "../lib/dojos";
-
-// export async function getStaticProps() {
-//   const profiles = await getAllBusinessProfiles();
-//   const allProfiles = JSON.stringify(profiles)
-
-//   return {
-//       props: {
-//            allProfiles
-//       }
-//  };
-// }
+import Image from 'next/image'
 
 export async function getStaticProps(context) {
   
@@ -21,7 +11,7 @@ const dojos = await fetchDojos();
 
   return {
     props: {
-      dojos,
+      dojos: dojos
     }, 
   };
 }
@@ -41,7 +31,7 @@ export default function Dojos(props) {
                     <Card
                     key={dojo.id}
                     name={dojo.name}
-                    imgUrl={dojo.imgUrl}
+                    imgUrl={dojo.imgUrl || 'https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2386&q=80'}
                     href={`/dojo/${dojo.id}`}
                   />
                   );
@@ -53,7 +43,6 @@ export default function Dojos(props) {
         </div>
       </div>
       </>
-    // return
     );
 }
 

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import dojos from '../data/dojos.json'
 import Banner from '../components/Banner'
 
@@ -16,7 +16,6 @@ export default function Home(props) {
   const handleOnBannerBtnClick = () => {
     console.log('Banner Button')
   }
-  console.log('props', props);
   return (
     <>
     {/* Head */}
