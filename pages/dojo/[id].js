@@ -5,16 +5,16 @@ import { fetchDojos } from '../../lib/dojos';
 
 export async function getStaticProps(staticProps) {
   const params = staticProps.params;
-
   const dojos = await fetchDojos();
+  const findDojosById = dojos.find((dojo) => {
+    return dojo.id.toString() === params.id
+  });
 
   return {
     props: {
-      dojo: transformedData.find(dojo => {
-        return dojo.id.toString() === params.id;  // params.id
-      })
-    }
-  }
+      dojo: findDojosById ? findDojosById : {},
+    },
+  };
 }
 
 export async function getStaticPaths() {
@@ -39,7 +39,7 @@ const Dojo = (props) => {
     return <div>Loading...</div>
   } 
   
-  const { address, name, neighborhood } = props.dojo;
+  const { location, name, neighborhood, imgUrl} = props.dojo;
 
   return (
     <>
@@ -57,10 +57,10 @@ const Dojo = (props) => {
               <span className="block xl:inline">{name}</span>{' '}
             </h1>
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-            {address}
+            {location.formatted_address}
             </p>
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-            Neighborhood: {neighborhood}
+            Neighborhood: {location.neighborhood}
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
@@ -85,8 +85,10 @@ const Dojo = (props) => {
         <div className="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
           <Image
             className="absolute inset-0 w-full h-full object-contain"
-            src={imgUrl || 'https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2386&q=80'}
+            src='https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2386&q=80'
             alt="image"
+            width={'700'}
+            height={'700px'}
           />
         </div>
       </main>

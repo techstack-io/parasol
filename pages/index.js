@@ -14,7 +14,11 @@ export async function getStaticProps(context) {
 
 export default function Home(props) {
   const handleOnBannerBtnClick = () => {
-    console.log('Banner Button')
+  console.log('Banner Button')
+  // AJAX CALL
+  // creating variables of user inputs
+  var city = $("#city-input").val().trim();
+  // var cuisineChoise = $("#cuisine-input").val().trim();
   }
   return (
     <>

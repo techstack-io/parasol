@@ -7,7 +7,6 @@ import Image from 'next/image'
 export async function getStaticProps(context) {
   
 const dojos = await fetchDojos();
-// const allDojos = JSON.stringify(dojos)
 
   return {
     props: {
