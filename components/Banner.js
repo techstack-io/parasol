@@ -36,7 +36,7 @@ const Banner = (props) => {
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
             <Image
-            src="/static/hero-1-img.svg"
+            src="/static/hero-3-bg.svg"
             alt="Main Image"
             width={600}
             height={500}
